@@ -1,5 +1,5 @@
-import "./App.css";
 import { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
     const initialValues = { username: "", email: "", password: "" };
@@ -24,7 +24,6 @@ function App() {
             console.log(formValues);
         }
     }, [formErrors]);
-
     const validate = (values) => {
         const errors = {};
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
@@ -34,18 +33,18 @@ function App() {
         if (!values.email) {
             errors.email = "Email is required!";
         } else if (!regex.test(values.email)) {
-            errors.email = "Please enter a valid email address";
+            errors.email = "This is not a valid email format!";
         }
         if (!values.password) {
             errors.password = "Password is required";
-        } else if (values.password.length < 6) {
-            errors.password = "Password length should be atleast 6 characters";
-        } else if (values.password.length > 16) {
-            errors.password =
-                "Password lenght should not be greater than 16 characters";
+        } else if (values.password.length < 4) {
+            errors.password = "Password must be more than 4 characters";
+        } else if (values.password.length > 10) {
+            errors.password = "Password cannot exceed more than 10 characters";
         }
         return errors;
     };
+
     return (
         <div className="container">
             {Object.keys(formErrors).length === 0 && isSubmit ? (
@@ -55,7 +54,7 @@ function App() {
             )}
 
             <form onSubmit={handleSubmit}>
-                <h1>Login form</h1>
+                <h1>Login Form</h1>
                 <div className="ui divider"></div>
                 <div className="ui form">
                     <div className="field">
@@ -72,9 +71,9 @@ function App() {
                     <div className="field">
                         <label>Email</label>
                         <input
-                            typle="text"
+                            type="text"
                             name="email"
-                            placeholder="abc@domain.com"
+                            placeholder="Email"
                             value={formValues.email}
                             onChange={handleChange}
                         />
