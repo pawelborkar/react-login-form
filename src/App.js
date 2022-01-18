@@ -23,7 +23,7 @@ function App() {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             console.log(formValues);
         }
-    }, [formErrors]);
+    }, [formErrors, formValues, isSubmit]);
     const validate = (values) => {
         const errors = {};
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
