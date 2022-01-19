@@ -47,7 +47,7 @@ function App() {
         } else if (values.password.length > 10) {
             errors.password = "Password cannot exceed more than 10 characters";
         }
-        if (values.password != values.confirmPassword) {
+        if (values.password !== values.confirmPassword) {
             errors.confirmPassword = "Those passwords didn’t match. Try again.";
         }
         return errors;
