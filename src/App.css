@@ -1,8 +1,16 @@
+* {
+    box-sizing: border-box;
+}
 body {
-    background: rgb(255, 196, 196);
+    background: url(https://images.unsplash.com/photo-1622667042273-e0e54442440a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
 }
 
 .container {
+
     display: flex !important;
     flex-direction: column;
     justify-content: center;
@@ -43,4 +51,14 @@ button {
 
 p {
     color: rgb(255, 0, 0);
+}
+
+.text {
+    margin: 2px;
+    padding: 5px;
+}
+
+span{
+    color: rgb(0, 95, 236);
+    cursor: pointer;
 }
